@@ -46,13 +46,13 @@ class LoginScreen extends StatelessWidget {
                 height: 56,
                 text: 'Sign Up',
                 color: AppColors.primary,
-                radius: 14),
+                radius: 14, text_color: AppColors.white,),
             ContainerWidget(
                 width: 327,
                 height: 56,
                 text: 'sign in with google',
                 color: AppColors.white,
-                radius: 14),
+                radius: 14, text_color: AppColors.white,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

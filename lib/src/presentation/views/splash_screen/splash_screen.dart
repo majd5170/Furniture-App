@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:furniture_app/src/core/utils/resources/app_assets.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
 
-import '../welocme_screen/welcome_screen_one.dart';
+import '../OnboardScreens/onboard_screen_one.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

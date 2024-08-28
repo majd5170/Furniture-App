@@ -9,7 +9,9 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: Text(''),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(
@@ -65,25 +67,25 @@ class SignInScreen extends StatelessWidget {
                 height: 56,
                 text: '=',
                 color: AppColors.primary,
-                radius: 14),
+                radius: 14, text_color: AppColors.white,),
             ContainerWidget(
                 width: 327,
                 height: 56,
-                text: 'sign in with google',
+                text: 'Sign In With Google',
                 color: AppColors.white,
-                radius: 14),
+                radius: 14, text_color: AppColors.black,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'don have an account?  ',
+                  'Don have an account?  ',
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: AppColors.gray),
                 ),
                 Text(
-                  'sign up fir free',
+                  'Sign up fir free',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
               ],

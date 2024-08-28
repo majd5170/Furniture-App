@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
-
 class ContainerWidget extends StatelessWidget {
   final double width;
   final double height;
   final String text;
   final Color color;
+  final Color text_color;
   final double radius;
 
   const ContainerWidget(
@@ -14,7 +14,7 @@ class ContainerWidget extends StatelessWidget {
       required this.height,
       required this.text,
       required this.color,
-      required this.radius});
+      required this.radius, required this.text_color});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ContainerWidget extends StatelessWidget {
           child: Text(
         text,
         style: TextStyle(
-            color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w500),
+            color: text_color, fontSize: 16, fontWeight: FontWeight.w500),
       )),
     );
   }
