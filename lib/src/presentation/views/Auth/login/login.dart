@@ -3,6 +3,8 @@ import 'package:furniture_app/src/core/utils/resources/app_color.dart';
 import 'package:furniture_app/src/core/utils/widgets/Container_widget.dart';
 import 'package:furniture_app/src/core/utils/widgets/textField_widget.dart';
 
+import '../Sign_In/sign_in.dart';
+
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
@@ -14,7 +16,7 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.all(18.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'Create Account',
@@ -41,13 +43,13 @@ class LoginScreen extends StatelessWidget {
               labeltext: 'Password',
               obscure: true,
             ),
-            ContainerWidget(
+            CustomContainer(
                 width: 327,
                 height: 56,
                 text: 'Sign Up',
                 color: AppColors.primary,
                 radius: 14, text_color: AppColors.white,),
-            ContainerWidget(
+            CustomContainer(
                 width: 327,
                 height: 56,
                 text: 'sign in with google',
@@ -63,9 +65,15 @@ class LoginScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       color: AppColors.gray),
                 ),
-                Text(
-                  'Sign In',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+          context, MaterialPageRoute(builder: (_) => SignInScreen()));
+                  },
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                  ),
                 ),
               ],
             ),

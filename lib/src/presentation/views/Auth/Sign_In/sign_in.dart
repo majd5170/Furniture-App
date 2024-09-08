@@ -16,7 +16,7 @@ class SignInScreen extends StatelessWidget {
         padding: const EdgeInsets.all(18.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'Welcome Back',
@@ -62,13 +62,13 @@ class SignInScreen extends StatelessWidget {
                 ),
               ],
             ),
-            ContainerWidget(
+            CustomContainer(
                 width: 327,
                 height: 56,
                 text: '=',
                 color: AppColors.primary,
                 radius: 14, text_color: AppColors.white,),
-            ContainerWidget(
+            CustomContainer(
                 width: 327,
                 height: 56,
                 text: 'Sign In With Google',

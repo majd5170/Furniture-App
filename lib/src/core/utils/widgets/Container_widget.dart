@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_app/src/core/utils/resources/app_color.dart';
-class ContainerWidget extends StatelessWidget {
+
+class CustomContainer extends StatelessWidget {
   final double width;
   final double height;
   final String text;
@@ -8,7 +8,7 @@ class ContainerWidget extends StatelessWidget {
   final Color text_color;
   final double radius;
 
-  const ContainerWidget(
+  const CustomContainer(
       {super.key,
       required this.width,
       required this.height,
