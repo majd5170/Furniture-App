@@ -1,4 +1,7 @@
 class AppStrings {
+  static const String skip = 'Skip';
+  static const String next = 'Next';
+  static const String back = 'Back';
   static const String appName = 'Crafty Furniture';
   static const String titleOneScreen =
       'View And Exprience Furniture With The Help Of Augmented Reality ';
@@ -6,7 +9,6 @@ class AppStrings {
       'Design Your Space With Augmented Reality By Creating Room';
   static const String titleThreeScreen =
       'Explore World Class Top Furnitures As Per Your Requirements & Choice';
-  static const String skip = 'Skip';
   static const String getStarted = 'Get Started';
   static const String welcomeBack = 'Welcome Back';
   static const String WelcomeBackPlease =
