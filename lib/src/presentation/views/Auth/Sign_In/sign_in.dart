@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
+import 'package:furniture_app/src/core/utils/resources/app_strings.dart';
 import 'package:furniture_app/src/core/utils/widgets/Container_widget.dart';
 import 'package:furniture_app/src/core/utils/widgets/textField_widget.dart';
 
@@ -16,10 +17,10 @@ class SignInScreen extends StatelessWidget {
         padding: const EdgeInsets.all(18.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Welcome Back',
+              AppStrings.welcomeBack,
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
             ),
             Text(
@@ -63,17 +64,21 @@ class SignInScreen extends StatelessWidget {
               ],
             ),
             CustomContainer(
-                width: 327,
-                height: 56,
-                text: '=',
-                color: AppColors.primary,
-                radius: 14, text_color: AppColors.white,),
+              width: 327,
+              height: 56,
+              text: '=',
+              color: AppColors.primary,
+              radius: 14,
+              text_color: AppColors.white,
+            ),
             CustomContainer(
-                width: 327,
-                height: 56,
-                text: 'Sign In With Google',
-                color: AppColors.white,
-                radius: 14, text_color: AppColors.black,),
+              width: 327,
+              height: 56,
+              text: 'Sign In With Google',
+              color: AppColors.white,
+              radius: 14,
+              text_color: AppColors.black,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
