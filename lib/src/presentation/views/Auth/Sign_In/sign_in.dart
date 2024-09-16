@@ -79,7 +79,7 @@ class SignInScreen extends StatelessWidget {
               radius: 14,
               text_color: AppColors.black,
             ),
-            Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(

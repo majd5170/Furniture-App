@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_app/firebase_options.dart';
+import 'package:furniture_app/src/core/domain/models/loacl_notifaction_service.dart';
 import 'package:furniture_app/src/core/theme/theme.dart';
 import 'package:furniture_app/src/presentation/views/splash_screen/splash_screen.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await LoaclNotifactionService.init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
