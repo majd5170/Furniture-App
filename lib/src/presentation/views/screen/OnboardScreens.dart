@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/src/core/utils/resources/app_strings.dart';
 import 'package:furniture_app/src/core/utils/widgets/custom_button.dart';
+import 'package:furniture_app/src/presentation/views/screen/loginScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../core/domain/models/on_boarding_model.dart';
 import '../../../core/utils/resources/app_color.dart';
 import '../../../core/utils/widgets/custom_text_button.dart';
-import '../Auth/login/login.dart';
 
 
 // ignore: must_be_immutable
@@ -13,7 +13,7 @@ class OnBoarding extends StatelessWidget {
   OnBoarding({super.key});
 
   PageController controller = PageController();
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,13 +71,13 @@ class OnBoarding extends StatelessWidget {
                           : CustomButton(
                               text: AppStrings.getStarted,
                               onPressed: ()  {
-                                //navigate to home screen
                                 Navigator.push(
                                 context, MaterialPageRoute(builder: (_) => LoginScreen()));
                       }, text_color_button: AppColors.white,)
                     ],
                   )
                 ],
+                
               ),
             ),
           );

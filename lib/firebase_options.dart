@@ -21,15 +21,9 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -60,12 +54,30 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCISjIKMCiUKZQhdUoZRVvYi9fRyiXn7ho',
-    appId: '1:48180638638:web:1533c5696fa712adb54e3f',
-    messagingSenderId: '48180638638',
-    projectId: 'furniture-fa597',
-    authDomain: 'furniture-fa597.firebaseapp.com',
-    storageBucket: 'furniture-fa597.appspot.com',
-    measurementId: 'G-B6NXMHFSWL',
+    apiKey: 'AIzaSyDL8S6zs-uBOQhNfFNRys0yFekYsy0zQTY',
+    appId: '1:923170883929:web:4a25236be4c90c0254a448',
+    messagingSenderId: '923170883929',
+    projectId: 'push-notification-d254d',
+    authDomain: 'push-notification-d254d.firebaseapp.com',
+    storageBucket: 'push-notification-d254d.appspot.com',
+    measurementId: 'G-SM8070YLN8',
   );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBZigROtsbEyuSqPwRXdsXbikc-3VXz8fk',
+    appId: '1:923170883929:ios:7184c1b55e8fb01f54a448',
+    messagingSenderId: '923170883929',
+    projectId: 'push-notification-d254d',
+    storageBucket: 'push-notification-d254d.appspot.com',
+    iosBundleId: 'com.example.furnitureApp',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyDyLntUy-BZVgQdxntfv8v6u6-tRAoPANA',
+    appId: '1:923170883929:android:efc5d87a9b82a8fe54a448',
+    messagingSenderId: '923170883929',
+    projectId: 'push-notification-d254d',
+    storageBucket: 'push-notification-d254d.appspot.com',
+  );
+
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/src/core/utils/resources/app_assets.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
-import '../OnboardScreens/onboard_screen_one.dart';
+import 'package:furniture_app/src/presentation/views/screen/OnboardScreens.dart';
+import 'package:go_router/go_router.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -20,8 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigate() {
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (_) => OnBoarding()));
+    GoRouter.of(context).go("/OnboardScreens");
     });
   }
 
@@ -30,6 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Center(
+        
         child: Image.asset(AppAssets.applogo),
       ),
     );
