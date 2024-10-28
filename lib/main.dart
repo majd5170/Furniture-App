@@ -5,7 +5,7 @@ import 'package:furniture_app/firebase_options.dart';
 import 'package:furniture_app/src/core/domain/models/loacl_notifaction_service.dart';
 import 'package:furniture_app/src/core/routers/app_routers.dart';
 import 'package:furniture_app/src/core/theme/theme.dart';
-import 'package:furniture_app/src/presentation/views/screen/Spalsh_screen.dart';
+
 
 
 
