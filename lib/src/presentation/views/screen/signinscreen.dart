@@ -34,12 +34,13 @@ class SignInScreen extends StatelessWidget {
             TextFieldWidgets(
               hinttext: 'Enter your Email',
               labeltext: 'Email',
-              obscure: false,
+              controller: TextEditingController(),
             ),
             TextFieldWidgets(
               hinttext: 'Enter your Password',
               labeltext: 'Password',
               obscure: true,
+              controller: TextEditingController(),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -9,6 +9,8 @@ import 'package:furniture_app/src/presentation/views/screen/signinscreen.dart';
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,16 +35,21 @@ class LoginScreen extends StatelessWidget {
             TextFieldWidgets(
                 labeltext: 'Full name',
                 hinttext: 'Enter Your Name',
-                obscure: false),
+                obscure: false,
+                 controller: TextEditingController(),
+
+                ),
             TextFieldWidgets(
               hinttext: 'Enter your Email',
               labeltext: 'Email',
               obscure: false,
+              controller: TextEditingController(),
             ),
             TextFieldWidgets(
               hinttext: 'Enter your Password',
               labeltext: 'Password',
               obscure: true,
+              controller: TextEditingController(),
             ),
             CustomContainer(
                 width: 327.w,
