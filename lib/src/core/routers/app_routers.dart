@@ -23,7 +23,7 @@ GoRouter router = GoRouter(
         builder: (context, state) => OnBoarding(),
         ),
         GoRoute(
-        path: '/SignIn_screen',
+        path: '/LoginScreen',
         builder: (context, state) => LoginScreen(),
         ),
         GoRoute(

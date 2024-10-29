@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
+import 'package:furniture_app/src/core/utils/resources/app_strings.dart';
 import 'package:furniture_app/src/core/utils/widgets/Container_widget.dart';
 import 'package:furniture_app/src/core/utils/widgets/textField_widget.dart';
-import 'package:furniture_app/src/presentation/cubits/cubit_login/login_cubit.dart';
-import 'package:furniture_app/src/presentation/views/screen/LoginScreen.dart';
+import 'package:go_router/go_router.dart';
 
 class SiginScreen extends StatelessWidget {
   SiginScreen({super.key});
@@ -16,51 +15,41 @@ class SiginScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
-        child: BlocConsumer<LoginCubit, LoginState>(
-          listener: (context, state) {
-            // TODO: implement listener
-          },
-          builder: (context, state) {
-            return Form(
-              key: BlocProvider.of<LoginCubit>(context).loginKey,
+        child: Form(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    'Create Account',
+                  Text(AppStrings.createAccount,
                     style:
                         TextStyle(fontSize: 32.sp, fontWeight: FontWeight.w600),
                   ),
-                  Text(
-                    'Let\'s Create Account Toghter',
+                  Text(AppStrings.LetCreateAccount,
                     style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.gray),
                   ),
                   TextFieldWidgets(
-                    labeltext: 'Full name',
-                    hinttext: 'Enter Your Name',
-                    obscure: false,
+                    labeltext: AppStrings.FullName,
+                    hinttext: AppStrings.EnterYourName,
                     controller: TextEditingController(),
                   ),
                   TextFieldWidgets(
-                    hinttext: 'Enter your Email',
-                    labeltext: 'Email',
-                    obscure: false,
+                    hinttext: AppStrings.EnterYourEmail,
+                    labeltext: AppStrings.email,
                     controller: TextEditingController(),
                   ),
                   TextFieldWidgets(
-                    hinttext: 'Enter your Password',
-                    labeltext: 'Password',
+                    hinttext: AppStrings.pleasEnterPassword,
+                    labeltext: AppStrings.password,
                     obscure: true,
                     controller: TextEditingController(),
                   ),
                   CustomContainer(
                     width: 327.w,
                     height: 56.h,
-                    text: 'Sign Up',
+                    text: AppStrings.SignIn,
                     color: AppColors.primary,
                     radius: 14,
                     text_color: AppColors.white,
@@ -68,7 +57,7 @@ class SiginScreen extends StatelessWidget {
                   CustomContainer(
                     width: 327.w,
                     height: 56.h,
-                    text: 'sign in with google',
+                    text: AppStrings.SignInWithGoogle,
                     color: AppColors.white,
                     radius: 14,
                     text_color: AppColors.white,
@@ -76,8 +65,7 @@ class SiginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Already Have An Account?  ',
+                      Text(AppStrings.AlreadyHaveAnAccount,
                         style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -85,11 +73,10 @@ class SiginScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => LoginScreen()));
+                              GoRouter.of(context).go("/LoginScreen");
+
                         },
-                        child: Text(
-                          'Sign In',
+                        child: Text(AppStrings.SignIn,
                           style: TextStyle(
                               fontSize: 14.sp, fontWeight: FontWeight.w500),
                         ),
@@ -98,9 +85,7 @@ class SiginScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            );
-          },
-        ),
+            )
       ),
     );
   }

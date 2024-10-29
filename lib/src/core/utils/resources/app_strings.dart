@@ -18,4 +18,27 @@ class AppStrings {
   static const String Next = 'Next';
   static const String pleasEnterEmail = 'Pleas Enter Email';
   static const String pleasEnterPassword = 'Pleas Enter Password';
+  static const String email = 'Email';
+  static const String password = 'password';
+  static const String Rememberfordays = 'Remember for 30 days';
+  static const String forgetpassword = 'Forget Password';
+  static const String login = 'Login';
+  static const String DontHaveAccount = 'Don’t Have an Account?';
+  static const String SignInWithGoogle = 'Sign In With Google';
+  static const String SignupFree = 'Signup free';
+  static const String FullName = 'Full Name';
+  static const String EnterYourName = 'Enter Your Name';
+  static const String EnterYourEmail = 'Enter Your Email';
+  static const String AlreadyHaveAnAccount = 'Already Have An Account?';
+  static const String SignIn = 'Sign In';
+
 }
+
+
+// Create Account
+// Let\'s Create Account Toghter
+// Full name
+// Enter Your Name
+// Enter your Email
+// Already Have An Account?  
+// Sign In

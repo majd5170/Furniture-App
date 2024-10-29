@@ -14,9 +14,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Text(''),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: BlocConsumer<LoginCubit, LoginState>(
@@ -32,19 +29,21 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Text(
                     AppStrings.welcomeBack,
-                    style:
-                        TextStyle(fontSize: 32.sp, fontWeight: FontWeight.w600),
+                    style:Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  Text(
-                    'Welcome Back! please enter your details.',
-                    style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.gray),
+                  Text(AppStrings.WelcomeBackPlease,
+                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.gray,
+                    )
                   ),
                   TextFieldWidgets(
-                    hinttext: 'Enter your Email',
-                    labeltext: 'Email',
+                    hinttext: AppStrings.pleasEnterEmail,
+                    labeltext: AppStrings.email,
                     controller:
                         BlocProvider.of<LoginCubit>(context).emailController,
                     validate: (data) {
@@ -54,8 +53,8 @@ class LoginScreen extends StatelessWidget {
                     },
                   ),
                   TextFieldWidgets(
-                    hinttext: 'Enter your Password',
-                    labeltext: 'Password',
+                    hinttext: AppStrings.pleasEnterPassword,
+                    labeltext: AppStrings.password,
                     icon: BlocProvider.of<LoginCubit>(context).suffixIcon,
                     sufiicIconOnpressed: () {
                       BlocProvider.of<LoginCubit>(context)
@@ -66,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                         return AppStrings.pleasEnterPassword;
                       }
                     },
-                    obscure: true,
+                    obscure: BlocProvider.of<LoginCubit>(context).isloginPasswordShowing,
                     controller:
                         BlocProvider.of<LoginCubit>(context).passwordController,
                   ),
@@ -77,19 +76,19 @@ class LoginScreen extends StatelessWidget {
                         value: false,
                         onChanged: (value) {},
                       ),
-                      Text(
-                        'Remember for 30 days',
-                        style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.gray),
+                      Text(AppStrings.Rememberfordays,
+                        style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.gray,
+                        )
                       ),
-                      Text(
-                        'forget password',
-                        style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.black),
+                      Text(AppStrings.forgetpassword,
+                          style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.black,
+                        )
                       ),
                     ],
                   ),
@@ -100,19 +99,19 @@ class LoginScreen extends StatelessWidget {
                       }
 
                     },
-                    child: CustomContainer(
+             child: CustomContainer(
                       width: 327.w,
                       height: 56.h,
-                      text: '=',
+                      text: AppStrings.login,
                       color: AppColors.primary,
                       radius: 14,
                       text_color: AppColors.white,
-                    ),
-                  ),
-                  CustomContainer(
+                          ),
+                        ),
+                    CustomContainer(
                     width: 327.w,
                     height: 56.h,
-                    text: 'Sign In With Google',
+                    text: AppStrings.SignInWithGoogle,
                     color: AppColors.white,
                     radius: 14,
                     text_color: AppColors.black,
@@ -120,17 +119,21 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Don have an account?  ',
-                        style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.gray),
+                      Text(AppStrings.DontHaveAccount,
+                        style:  Theme.of(context).textTheme.labelSmall!.copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.gray,
+                        )
                       ),
-                      Text(
-                        'Sign up fir free',
-                        style: TextStyle(
-                            fontSize: 14.sp, fontWeight: FontWeight.w500),
+                      InkWell(
+                        onTap: () {
+                              GoRouter.of(context).go("/SignUp_screen");
+                        },
+                        child: Text(AppStrings.SignupFree,
+                          style: TextStyle(
+                              fontSize: 14.sp, fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ],
                   ),

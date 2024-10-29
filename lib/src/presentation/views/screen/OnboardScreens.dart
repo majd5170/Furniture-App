@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/src/core/utils/resources/app_strings.dart';
 import 'package:furniture_app/src/core/utils/widgets/custom_button.dart';
-import 'package:furniture_app/src/presentation/views/screen/SiginScreen.dart';
+import 'package:furniture_app/src/presentation/views/screen/LoginScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../core/domain/models/on_boarding_model.dart';
 import '../../../core/utils/resources/app_color.dart';
@@ -24,7 +25,7 @@ class OnBoarding extends StatelessWidget {
           itemCount: OnBoardingModel.onBoardingScreens.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(18.0),
               child: Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,31 +50,44 @@ class OnBoarding extends StatelessWidget {
                     Row(
                       children: [
                        index != 2
-                          ? CustomTextButton(
-                              text: AppStrings.skip,
-                              onPressed: () {
-                                 controller.jumpToPage(2);
-                              }, text_color_button: AppColors.blackFont,
-                            )
+                          ? Container(
+                            width: 110.w,
+                            height: 40.h,
+                            child: CustomTextButton(
+                                text: AppStrings.skip,
+                                onPressed: () {
+                                   controller.jumpToPage(2);
+                                }, text_color_button: AppColors.blackFont,
+                              ),
+                          )
                           : Container(),
                       //spacer
                       const Spacer(),
                       //next Button
                       index != 2
-                          ? CustomButton(
-                              text: AppStrings.next,
-                              onPressed: () {
-                                controller.nextPage(
-                                    duration: const Duration(seconds: 4),
-                                    curve: Curves.easeOutBack);
-                              }, text_color_button: AppColors.white,
-                            )
-                          : CustomButton(
-                              text: AppStrings.getStarted,
-                              onPressed: ()  {
-                                Navigator.push(
-                                context, MaterialPageRoute(builder: (_) => SiginScreen()));
-                      }, text_color_button: AppColors.white,)
+                          ? Container(
+                            width: 110.w,
+                            height: 40.h,
+                            child: CustomButton(
+                                text: AppStrings.next,
+                                onPressed: () {
+                                  controller.nextPage(
+                                      duration: const Duration(seconds: 2),
+                                      curve: Curves.easeIn);
+                                }, text_color_button: AppColors.white,
+                              ),
+                          )
+                          : Container(
+                            width: 327.w,
+                            height: 56.h,
+                            child: CustomButton(
+                                text: AppStrings.getStarted,
+                                
+                                onPressed: ()  {
+                                  Navigator.push(
+                                  context, MaterialPageRoute(builder: (_) => LoginScreen()));
+                                                  }, text_color_button: AppColors.white,),
+                          )
                     ],
                   )
                 ],

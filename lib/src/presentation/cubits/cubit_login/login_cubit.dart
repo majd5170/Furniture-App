@@ -9,12 +9,12 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool isloginPasswordShowing = true;
-  IconData suffixIcon = Icons.visibility;
+  IconData suffixIcon = Icons.visibility_off;
 
   void changLoginPasswordSuffixIcon() {
     isloginPasswordShowing = !isloginPasswordShowing;
     suffixIcon =
-        isloginPasswordShowing ? Icons.visibility : Icons.visibility_off;
+        isloginPasswordShowing ? Icons.visibility_off : Icons.visibility;
     emit(ChangLoginPasswordSuffixIcon());
   }
 }
