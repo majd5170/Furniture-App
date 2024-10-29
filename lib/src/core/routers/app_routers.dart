@@ -4,8 +4,8 @@ import 'package:furniture_app/src/presentation/views/screen/Home_screen.dart';
 import 'package:furniture_app/src/presentation/views/screen/OnboardScreens.dart';
 import 'package:furniture_app/src/presentation/views/screen/Profile_screen.dart';
 import 'package:furniture_app/src/presentation/views/screen/Shopping_screen.dart';
-import 'package:furniture_app/src/presentation/views/screen/loginScreen.dart';
-import 'package:furniture_app/src/presentation/views/screen/signinscreen.dart';
+import 'package:furniture_app/src/presentation/views/screen/SiginScreen.dart';
+import 'package:furniture_app/src/presentation/views/screen/LoginScreen.dart';
 import 'package:furniture_app/src/presentation/views/screen/Spalsh_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -28,7 +28,7 @@ GoRouter router = GoRouter(
         ),
         GoRoute(
         path: '/SignUp_screen',
-        builder: (context, state) => SignInScreen(),
+        builder: (context, state) => SiginScreen(),
         ),
         GoRoute(
         path: '/Home_screen',

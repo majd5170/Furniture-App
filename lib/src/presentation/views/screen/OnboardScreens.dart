@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/src/core/utils/resources/app_strings.dart';
 import 'package:furniture_app/src/core/utils/widgets/custom_button.dart';
-import 'package:furniture_app/src/presentation/views/screen/loginScreen.dart';
+import 'package:furniture_app/src/presentation/views/screen/SiginScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../core/domain/models/on_boarding_model.dart';
 import '../../../core/utils/resources/app_color.dart';
@@ -72,7 +72,7 @@ class OnBoarding extends StatelessWidget {
                               text: AppStrings.getStarted,
                               onPressed: ()  {
                                 Navigator.push(
-                                context, MaterialPageRoute(builder: (_) => LoginScreen()));
+                                context, MaterialPageRoute(builder: (_) => SiginScreen()));
                       }, text_color_button: AppColors.white,)
                     ],
                   )

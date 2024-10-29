@@ -16,4 +16,6 @@ class AppStrings {
   static const String createAccount = 'Create Account';
   static const String LetCreateAccount = 'Let’s create account toghter';
   static const String Next = 'Next';
+  static const String pleasEnterEmail = 'Pleas Enter Email';
+  static const String pleasEnterPassword = 'Pleas Enter Password';
 }
