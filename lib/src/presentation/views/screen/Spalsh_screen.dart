@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/src/core/utils/resources/app_assets.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
-import 'package:furniture_app/src/presentation/views/screen/OnboardScreens.dart';
 import 'package:go_router/go_router.dart';
 
 

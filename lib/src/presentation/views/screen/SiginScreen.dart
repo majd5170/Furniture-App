@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:furniture_app/src/core/utils/resources/app_assets.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
 import 'package:furniture_app/src/core/utils/resources/app_strings.dart';
 import 'package:furniture_app/src/core/utils/widgets/Container_widget.dart';
@@ -12,7 +13,6 @@ class SiginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Form(
@@ -31,36 +31,58 @@ class SiginScreen extends StatelessWidget {
                         color: AppColors.gray),
                   ),
                   TextFieldWidgets(
+                     inputType: TextInputType.name,
                     labeltext: AppStrings.FullName,
                     hinttext: AppStrings.EnterYourName,
                     controller: TextEditingController(),
                   ),
                   TextFieldWidgets(
+                     inputType: TextInputType.emailAddress,
                     hinttext: AppStrings.EnterYourEmail,
                     labeltext: AppStrings.email,
                     controller: TextEditingController(),
                   ),
                   TextFieldWidgets(
+                     inputType: TextInputType.visiblePassword,
                     hinttext: AppStrings.pleasEnterPassword,
                     labeltext: AppStrings.password,
                     obscure: true,
                     controller: TextEditingController(),
                   ),
-                  CustomContainer(
-                    width: 327.w,
-                    height: 56.h,
-                    text: AppStrings.SignIn,
-                    color: AppColors.primary,
-                    radius: 14,
-                    text_color: AppColors.white,
+                  InkWell(
+                    onTap: () {
+                      
+                    },
+                    child: CustomContainer(
+                        width: 327.w,
+                        height: 56.h,
+                        color: AppColors.primary,
+                        radius: 14,
+                        child: Center(child: Text( AppStrings.SignIn  ,  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                          color: AppColors.white,
+                               )
+                              )
+                             ),
+                            ),
                   ),
-                  CustomContainer(
-                    width: 327.w,
-                    height: 56.h,
-                    text: AppStrings.SignInWithGoogle,
-                    color: AppColors.white,
-                    radius: 14,
-                    text_color: AppColors.white,
+                  InkWell(
+                    onTap: () {
+                      
+                    },
+                    child: CustomContainer(
+                          width: 327.w,
+                          height: 56.h,
+                          color: AppColors.white,
+                          radius: 14,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(AppAssets.goolgeLogoSvg),
+                              Text(AppStrings.SignInWithGoogle, style: Theme.of(context).textTheme.titleLarge,)
+                            ],
+                    
+                          ),  
+                          ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +98,7 @@ class SiginScreen extends StatelessWidget {
                               GoRouter.of(context).go("/LoginScreen");
 
                         },
-                        child: Text(AppStrings.SignIn,
+                        child: Text(AppStrings.login,
                           style: TextStyle(
                               fontSize: 14.sp, fontWeight: FontWeight.w500),
                         ),

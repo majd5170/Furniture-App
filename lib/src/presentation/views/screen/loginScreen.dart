@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:furniture_app/src/core/utils/resources/app_assets.dart';
 import 'package:furniture_app/src/core/utils/resources/app_color.dart';
 import 'package:furniture_app/src/core/utils/resources/app_strings.dart';
 import 'package:furniture_app/src/core/utils/widgets/Container_widget.dart';
@@ -42,6 +43,7 @@ class LoginScreen extends StatelessWidget {
                     )
                   ),
                   TextFieldWidgets(
+                     inputType: TextInputType.emailAddress,
                     hinttext: AppStrings.pleasEnterEmail,
                     labeltext: AppStrings.email,
                     controller:
@@ -50,9 +52,11 @@ class LoginScreen extends StatelessWidget {
                       if (data!.isEmpty || !data.contains('@gmail.com')) {
                         return AppStrings.pleasEnterEmail;
                       }
-                    },
+                      return null;
+                    }, 
                   ),
                   TextFieldWidgets(
+                    inputType: TextInputType.visiblePassword,
                     hinttext: AppStrings.pleasEnterPassword,
                     labeltext: AppStrings.password,
                     icon: BlocProvider.of<LoginCubit>(context).suffixIcon,
@@ -64,6 +68,7 @@ class LoginScreen extends StatelessWidget {
                       if (data!.isEmpty || !data.contains('5170')) {
                         return AppStrings.pleasEnterPassword;
                       }
+                      return null;
                     },
                     obscure: BlocProvider.of<LoginCubit>(context).isloginPasswordShowing,
                     controller:
@@ -76,7 +81,8 @@ class LoginScreen extends StatelessWidget {
                         value: false,
                         onChanged: (value) {},
                       ),
-                      Text(AppStrings.Rememberfordays,
+                      Text( 
+                        AppStrings.Rememberfordays,
                         style: Theme.of(context).textTheme.labelSmall!.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -87,7 +93,6 @@ class LoginScreen extends StatelessWidget {
                           style: Theme.of(context).textTheme.labelSmall!.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.black,
                         )
                       ),
                     ],
@@ -102,20 +107,36 @@ class LoginScreen extends StatelessWidget {
              child: CustomContainer(
                       width: 327.w,
                       height: 56.h,
-                      text: AppStrings.login,
                       color: AppColors.primary,
                       radius: 14,
-                      text_color: AppColors.white,
+                      child: Center(child: Text( AppStrings.login  ,  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: AppColors.white,
+                             )
+                            )
+                           ),
                           ),
                         ),
-                    CustomContainer(
-                    width: 327.w,
-                    height: 56.h,
-                    text: AppStrings.SignInWithGoogle,
-                    color: AppColors.white,
-                    radius: 14,
-                    text_color: AppColors.black,
-                  ),
+                   
+                        InkWell(
+                          onTap: () {
+                            
+                          },
+                          child: CustomContainer(
+                          width: 327.w,
+                          height: 56.h,
+                          color: AppColors.white,
+                          radius: 14,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(AppAssets.goolgeLogoSvg),
+                              Text(AppStrings.SignInWithGoogle, style: Theme.of(context).textTheme.titleLarge,)
+                            ],
+                          
+                          ),  
+                          ),
+                        ),
+                    
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

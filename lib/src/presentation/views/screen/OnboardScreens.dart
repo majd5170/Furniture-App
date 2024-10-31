@@ -28,8 +28,7 @@ class OnBoarding extends StatelessWidget {
               padding: const EdgeInsets.all(18.0),
               child: Expanded(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     // image
                     Image.asset(OnBoardingModel.onBoardingScreens[index].imgPath),
@@ -52,7 +51,7 @@ class OnBoarding extends StatelessWidget {
                        index != 2
                           ? Container(
                             width: 110.w,
-                            height: 40.h,
+                            height: 60.h,
                             child: CustomTextButton(
                                 text: AppStrings.skip,
                                 onPressed: () {
@@ -67,13 +66,13 @@ class OnBoarding extends StatelessWidget {
                       index != 2
                           ? Container(
                             width: 110.w,
-                            height: 40.h,
+                            height: 60.h,
                             child: CustomButton(
                                 text: AppStrings.next,
                                 onPressed: () {
                                   controller.nextPage(
-                                      duration: const Duration(seconds: 2),
-                                      curve: Curves.easeIn);
+                                      duration: const Duration(milliseconds: 1200),
+                                      curve: Curves.easeOutQuad);
                                 }, text_color_button: AppColors.white,
                               ),
                           )
@@ -82,12 +81,11 @@ class OnBoarding extends StatelessWidget {
                             height: 56.h,
                             child: CustomButton(
                                 text: AppStrings.getStarted,
-                                
                                 onPressed: ()  {
                                   Navigator.push(
                                   context, MaterialPageRoute(builder: (_) => LoginScreen()));
-                                                  }, text_color_button: AppColors.white,),
-                          )
+                        }, text_color_button: AppColors.white,),
+                      )
                     ],
                   )
                 ],

@@ -7,6 +7,7 @@ class TextFieldWidgets extends StatelessWidget {
   final VoidCallback? sufiicIconOnpressed;
   final String labeltext;
   final String hinttext;
+  final dynamic inputType;
   final bool obscure;
 
   const TextFieldWidgets({
@@ -18,11 +19,13 @@ class TextFieldWidgets extends StatelessWidget {
     this.validate,
     this.icon,
     this.sufiicIconOnpressed,
+   required this.inputType,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: inputType,
       controller: controller,
       validator: validate,
       obscureText: obscure,

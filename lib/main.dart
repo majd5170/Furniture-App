@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/firebase_options.dart';
-import 'package:furniture_app/src/core/config/di.dart';
 import 'package:furniture_app/src/core/domain/models/loacl_notifaction_service.dart';
 import 'package:furniture_app/src/core/routers/app_routers.dart';
 import 'package:furniture_app/src/core/theme/theme.dart';
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
       designSize: Size(375, 812),
       builder: (context, child) => MaterialApp.router(
         routerConfig: router,
-        theme: getAppTheme(),
+        theme: getThemeData(isLight: false),
         debugShowCheckedModeBanner: false,
       ),
     );

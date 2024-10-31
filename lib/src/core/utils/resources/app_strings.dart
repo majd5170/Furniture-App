@@ -22,7 +22,7 @@ class AppStrings {
   static const String password = 'password';
   static const String Rememberfordays = 'Remember for 30 days';
   static const String forgetpassword = 'Forget Password';
-  static const String login = 'Login';
+  static const String login = ' Login';
   static const String DontHaveAccount = 'Don’t Have an Account?';
   static const String SignInWithGoogle = 'Sign In With Google';
   static const String SignupFree = 'Signup free';
@@ -30,7 +30,7 @@ class AppStrings {
   static const String EnterYourName = 'Enter Your Name';
   static const String EnterYourEmail = 'Enter Your Email';
   static const String AlreadyHaveAnAccount = 'Already Have An Account?';
-  static const String SignIn = 'Sign In';
+  static const String SignIn = 'Sign Up';
 
 }
 
