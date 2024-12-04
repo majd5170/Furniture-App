@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class TextFieldWidgets extends StatelessWidget {
@@ -11,16 +12,16 @@ class TextFieldWidgets extends StatelessWidget {
   final bool obscure;
 
   const TextFieldWidgets({
-    super.key,
-    required this.labeltext,
-    required this.hinttext,
-    this.obscure = false,
+    Key? key,
     required this.controller,
     this.validate,
     this.icon,
     this.sufiicIconOnpressed,
-   required this.inputType,
-  });
+    required this.labeltext,
+    required this.hinttext,
+    required this.inputType,
+    this.obscure = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
