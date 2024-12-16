@@ -6,7 +6,8 @@ import 'package:furniture_app/firebase_options.dart';
 import 'package:furniture_app/src/core/domain/models/loacl_notifaction_service.dart';
 import 'package:furniture_app/src/core/routers/app_routers.dart';
 import 'package:furniture_app/src/core/theme/theme.dart';
-import 'package:furniture_app/src/presentation/cubits/cubit/homescreen_cubit.dart';
+import 'package:furniture_app/src/presentation/cubits/cubit/product_cubit.dart';
+import 'package:furniture_app/src/presentation/cubits/cubit_home/homescreen_cubit.dart';
 import 'package:furniture_app/src/presentation/cubits/cubit_login/login_cubit.dart';
 
 void main() async {
@@ -16,13 +17,11 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MultiBlocProvider(
+  runApp(
+    MultiBlocProvider(
     providers: [
       BlocProvider(
         create: (context) => LoginCubit(),
-      ),
-      BlocProvider(
-        create: (context) => HomescreenCubit(),
       ),
     ],
     child: MyApp(),

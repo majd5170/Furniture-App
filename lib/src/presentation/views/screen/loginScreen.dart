@@ -49,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                     controller:
                         BlocProvider.of<LoginCubit>(context).emailController,
                     validate: (data) {
-                      if (data!.isEmpty || !data.contains('@gmail.com')) {
+                      if (data!.isEmpty || !data.contains('123')) {
                         return AppStrings.pleasEnterEmail;
                       }
                       return null;
@@ -65,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                           .changLoginPasswordSuffixIcon();
                     },
                     validate: (data) {
-                      if (data!.isEmpty || !data.contains('5170')) {
+                      if (data!.isEmpty || !data.contains('456')) {
                         return AppStrings.pleasEnterPassword;
                       }
                       return null;

@@ -1,28 +1,28 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:furniture_app/src/core/domain/models/error_model.dart';
 import 'package:furniture_app/src/core/domain/models/exception_model.dart';
 import 'package:furniture_app/src/core/domain/models/general_model.dart';
 import 'package:furniture_app/src/core/domain/models/product_model.dart';
 
+class ApiService {
+  final Dio _dio = Dio();
 
-abstract class Service {
-  Dio dio = Dio();
-}
-
-class NerdsService extends Service {
-  Future<GeneralModel> getAllProducts() async {
+  Future<List<ProductModel>> fetchUsers() async {
     try {
-      Response response = await dio.get('https://dummyjson.com/products');
-      print(response.data);
+      final response = await _dio.get('https://dummyjson.com/products');
       if (response.statusCode == 200) {
-        ProductModel Product = ProductModel.fromMap(response.data);
-        print(Product);
-        return Product;
+        List<ProductModel> product = (response.data['products'] as  List<dynamic>).map((user) => ProductModel.fromJson(user)).toList();
+        return product;
+
       } else {
-        return ErrorModel(errorMessage: response.headers.map.toString());
+        throw Exception('Failed to load data');
       }
-    } catch (error) {
-      return ExceptionModel(exceptionMessage: error.toString());
+    } catch (e) {
+      if (kDebugMode) {
+        print("Error: $e");
+      }
+      throw Exception('Error: $e');
     }
   }
-  }
+}

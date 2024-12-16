@@ -1,33 +1,28 @@
-part of 'homescreen_cubit.dart';
+// part of 'product_cubit.dart';
 
-@immutable
-sealed class HomescreenState {}
+// import 'package:furniture_app/src/core/domain/models/product_model.dart';
 
-final class HomescreenInitial extends HomescreenState {}
+// @immutable
+// sealed class ProductState {}
 
-final class LoadingHomeState extends HomescreenState {}
-
-
-final class SuccessToLoadHomeState extends HomescreenState {
-  ProductModel products;
-  SuccessToLoadHomeState({
-    required this.products
-  });
-}
+// final class ProductInitial extends ProductState {}
 
 
-final class ErrorHomeState extends HomescreenState {
-  ErrorModel errorMessage;
-  ErrorHomeState({
-    required this.errorMessage,
-  });
-  
-}
+// final class ProductLoading extends ProductState {}
 
 
-final class ExceptionHomeState extends HomescreenState {
-  final String message;
+// final class ProductLoaded extends ProductState {
+//     final List<ProductModel> product;
+//     ProductLoaded(this.product);
+// }
+// final class ProductError extends ProductState {
+//   final String message;
+//   ProductError(this.message);
+// }
 
-  ExceptionHomeState(this.message);
 
-}
+
+
+
+
+
